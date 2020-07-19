@@ -1,0 +1,68 @@
+{
+  "name": "react-typescript-library-template",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dist",
+    "dist-esm"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist-esm/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch --bail",
+    "build:cjs": "tsc",
+    "build:esm": "tsc -m es6 --outDir dist-esm",
+    "watch:cjs": "tsc --watch",
+    "watch:esm": "tsc -m es6 --outDir dist-esm --watch",
+    "prepublishOnly": "npm run build",
+    "release": "npm publish --access public",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook -o docs/storybook",
+    "typedoc": "typedoc --options typedoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-type/react-typescript-library-template.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Grant Forrest",
+    "email": "gaforres@gmail.com",
+    "url": "https://github.com/a-type"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-type/react-typescript-library-template/issues"
+  },
+  "homepage": "https://github.com/a-type/react-typescript-library-template#readme",
+  "peerDependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^5.3.19",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.7",
+    "@types/jest": "^26.0.5",
+    "@types/node": "^14.0.23",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "babel-loader": "^8.1.0",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "typedoc": "0.17.0-3",
+    "typedoc-plugin-internal-external": "^2.2.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {}
+}

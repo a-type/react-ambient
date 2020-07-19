@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "target": "es5",
+    "lib": ["dom", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "esModuleInterop": true,
+    "strict": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "noImplicitAny": true,
+    "noImplicitReturns": true
+  },
+  "include": ["src"]
+}
