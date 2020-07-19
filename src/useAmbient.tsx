@@ -30,7 +30,7 @@ export type UseAmbientOptions<
    *     // by pulling the color value from activeData, we are using the color
    *     // as specified by the currently active section, which presumably will
    *     // have the best contrast with the currently active background.
-   *     <section {...props} style={{ color: activeData.color }}>
+   *     <section {...props} style={{ color: activeData && activeData.color }}>
    *       {renderBackground(<BackgroundImage />)}
    *       Some content
    *     </section>
