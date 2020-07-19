@@ -57,3 +57,5 @@ function YourPageView() {
 ```
 
 ### 4 That's it!
+
+You can find full typings for all exported tools in the [docs](https://a-type.github.io/react-ambient/lib). Or you can view another example in the [Storybook](https://a-type.github.io/react-ambient/storybook).
