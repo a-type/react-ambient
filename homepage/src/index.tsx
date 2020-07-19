@@ -1,28 +1,41 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Component } from '../../src/index';
+import { AmbientProvider } from '../../src/index';
+import { Section } from './Section';
+import { FlashyBackground } from './backgrounds/FlashyBackground';
+
+import './index.css';
+import { RippleBackground } from './backgrounds/RippleBackground';
 
 const App = () => {
   return (
-    <main>
-      <h1>react-typescript-library-template</h1>
-      <section>
+    <AmbientProvider>
+      <Section
+        background={<RippleBackground />}
+        color="var(--color-background)"
+      >
+        <h1>React Ambient</h1>
+      </Section>
+      <Section background={<FlashyBackground />}>
         <p>
-          This is a template repo to streamline the creation of React libraries
-          using Typescript and some other tools I like.
+          React Ambient provides an animated page background which changes based
+          on the most visible content on the page. Just link up your content
+          sections with the backgrounds you choose for them, and you're good to
+          go.
         </p>
-        <p>
-          Use the template repository to start your own library:{' '}
-          <a href="https://github.com/a-type/react-typescript-library-template">
-            Github
+      </Section>
+      <Section>
+        <p>It really is easy to use. Check out the docs to see for yourself!</p>
+        <div className="row">
+          <a href="https://github.com/a-type/react-ambient">Github</a>
+          <a href="https://a-type.github.io/react-ambient/storybook">
+            Storybook
           </a>
-        </p>
-      </section>
-      <section>
-        <Component>Example component usage</Component>
-      </section>
-    </main>
+          <a href="https://a-type.github.io/react-ambient/lib">Docs</a>
+        </div>
+      </Section>
+    </AmbientProvider>
   );
 };
 

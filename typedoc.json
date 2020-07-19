@@ -1,8 +1,8 @@
 {
   "inputFiles": ["./src/index.ts"],
   "out": "docs/lib",
-  "excludeNotExported": true,
-  "excludeExternals": true,
+  "excludeNotExported": false,
+  "excludeExternals": false,
   "externalPattern": ["./src/internal/**/*"],
   "mode": "library",
   "exclude": ["./src/constants.ts", "./src/types.ts", "./src/utils.ts"],

@@ -1,0 +1,58 @@
+html,
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-foreground);
+  font-size: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-background: #fed;
+  --color-foreground: #323248;
+  --color-blue-1: #424261;
+  --color-blue-2: #37375f;
+  --color-blue-3: #43437c;
+  --color-blue-4: #323248;
+  --color-orange-1: rgb(241, 184, 114);
+  --color-orange-2: rgb(240, 169, 111);
+  --color-orange-3: rgb(245, 213, 125);
+}
+
+section {
+  padding: 64px;
+  min-height: 80vh;
+  border-bottom: 4px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+section > * {
+  max-width: 800px;
+}
+
+p {
+  line-height: 1.5;
+  text-align: center;
+}
+
+a {
+  color: var(--color-blue-2);
+}
+
+a:visited {
+  color: var(--color-blue-3);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}

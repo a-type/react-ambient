@@ -6,10 +6,13 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "build:gh": "parcel build index.html --public-url /intereactive/ --out-dir ../docs"
+    "build:gh": "parcel build index.html --public-url /react-ambient/ --out-dir ../docs"
   },
   "dependencies": {
-    "react-app-polyfill": "^1.0.0"
+    "react-app-polyfill": "^1.0.0",
+    "react-spring": "^8.0.27",
+    "react-zdog": "^1.0.11",
+    "zdog": "^1.1.2"
   },
   "alias": {
     "react": "../node_modules/react",

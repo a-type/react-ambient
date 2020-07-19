@@ -1,11 +1,59 @@
-# react-typescript-library-template
+# react-ambient
 
-Personal template of [@a-type](https://github.com/a-type) for creating React libraries using Typescript.
+Dead-simple solution for changing the background dynamically based on the most prominent content.
 
-## Features
+[See the demo](https://a-type.github.io/react-ambient)
 
-- Testing: Jest/RTL - `npm test`/`npm test:watch`
-- Build: CJS+ESM - `npm run build:cjs`/`npm run build:esm`
-- Storybook - `npm run storybook`
-- TSDoc - `npm run tsdoc`
-- Homepage - `cd homepage && npm run build`
+## Quick Start
+
+### 1 Install
+
+```
+npm i --save react-ambient
+```
+
+### 2 Add provider
+
+```jsx
+import { AmbientProvider } from 'react-ambient';
+
+function AppLayout() {
+  return (
+    <AmbientProvider>
+      <YourPageView />
+    </AmbientProvider>
+  );
+}
+```
+
+### 3 Add sections
+
+```jsx
+import { useAmbient } from 'react-ambient';
+
+function Section({ backgroundContent, children }) {
+  const [props, { renderBackground }] = useAmbient();
+
+  return (
+    <section {...props}>
+      {renderBackground(backgroundContent)}
+      {children}
+    </section>
+  );
+}
+
+function YourPageView() {
+  return (
+    <main>
+      <Section backgroundContent={<FancyBackground />}>
+        <p>Section content</p>
+      </Section>
+      <Section backgroundContent={<AdvertisingVideo />}>
+        <p>Section content</p>
+      </Section>
+    </main>
+  );
+}
+```
+
+### 4 That's it!
