@@ -173,8 +173,7 @@ export function useAmbient<D = any, T = FadingBackgroundProps>(
   }, [data, key]);
 
   function renderBackground(content: React.ReactNode = null) {
-    const backgroundElement = ctx.backgroundRef?.current;
-    if (!backgroundElement) return null;
+    if (!ctx.backgroundElement) return null;
     if (WrapperComponent) {
       return ReactDOM.createPortal(
         // @ts-ignore too complicated to make this logic work internally
@@ -187,10 +186,10 @@ export function useAmbient<D = any, T = FadingBackgroundProps>(
         >
           {content}
         </WrapperComponent>,
-        backgroundElement
+        ctx.backgroundElement
       );
     } else {
-      return ReactDOM.createPortal(content, backgroundElement);
+      return ReactDOM.createPortal(content, ctx.backgroundElement);
     }
   }
 

@@ -56,9 +56,12 @@ export function AmbientProvider(props: AmbientProviderProps) {
     ...rest
   } = props;
   const [firstKey, setFirstKey] = React.useState<string | null>(null);
-  const backgroundRef = React.useRef<HTMLDivElement>(null);
   const dataByKeyRef = React.useRef<Record<string, any>>({});
   const groupId = useId(providedGroupId);
+  const [
+    backgroundElement,
+    setBackgroundElement,
+  ] = React.useState<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -107,7 +110,7 @@ export function AmbientProvider(props: AmbientProviderProps) {
     <AmbientContext.Provider
       value={{
         activeKey: firstKey,
-        backgroundRef,
+        backgroundElement,
         activeData: firstKey && dataByKeyRef.current[firstKey],
         dataByKey: dataByKeyRef.current,
         groupId,
@@ -115,8 +118,8 @@ export function AmbientProvider(props: AmbientProviderProps) {
     >
       <div
         {...backgroundElementProps}
-        data-first-visible-background
-        ref={backgroundRef}
+        data-ambient-background
+        ref={setBackgroundElement}
         style={{
           position: 'fixed',
           top: 0,

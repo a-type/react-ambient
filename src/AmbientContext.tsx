@@ -4,7 +4,7 @@ export type AmbientContextType = {
   /** The currently active content key */
   activeKey: string | null;
   /** An element ref to the background element */
-  backgroundRef: React.RefObject<HTMLDivElement> | null;
+  backgroundElement: HTMLDivElement | null;
   /** The user data for the currently active content */
   activeData: any | null;
   /** All user data, keyed by content id */
@@ -15,7 +15,7 @@ export type AmbientContextType = {
 
 export const AmbientContext = React.createContext<AmbientContextType>({
   activeKey: null,
-  backgroundRef: null,
+  backgroundElement: null,
   activeData: {},
   dataByKey: {},
   groupId: 'default',
