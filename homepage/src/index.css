@@ -62,4 +62,5 @@ a:visited {
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
+  max-width: 800px;
 }
