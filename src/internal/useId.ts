@@ -1,10 +1,7 @@
 import * as React from 'react';
-
-function randomId() {
-  return `id-${Math.random().toFixed(20).replace('.', '')}`;
-}
+import { useUID } from 'react-uid';
 
 export function useId(definedId?: string) {
-  const idRef = React.useRef(definedId || randomId());
-  return idRef.current;
+  const uid = useUID();
+  return definedId || uid;
 }
